@@ -1,13 +1,19 @@
 import React, { use } from 'react';
-import { NavLink } from 'react-router';
-import './Navbar.css'
+import { Link, NavLink } from 'react-router';
+import './Navbar.css';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FaRegUserCircle } from "react-icons/fa";
+import userIcon from '../assets/profile.png'
 
 const Navbar = () => {
 
-  const user = use(AuthContext);
+  const {user} = use(AuthContext);
   console.log(user);
 
+
+  const handleLogout = () =>{
+    
+  }
 
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
@@ -18,6 +24,11 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
+    <div>
+    {
+    user && user.email
+   }
+   </div>
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
@@ -36,7 +47,18 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Login</a>
+
+   <div>
+      {user ?  <button onClick={handleLogout} className="btn btn-secondary">Log Out</button> :  <Link to='/auth/login' className="btn btn-secondary">Login</Link> }
+      <ToastContainer/>
+    </div>
+
+    <img className='w-10  mr-3' src={userIcon} alt="" />
+    {
+
+    }
+   
+   
   </div>
 </div>
     );

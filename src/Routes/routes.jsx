@@ -3,9 +3,14 @@ import {
 } from "react-router";
 import Home from "../Pages/Home";
 import HomeLayout from "../Layouts/HomeLayout";
+import AuthLayout from "../Layouts/AuthLayout";
 import FindRoommate from "../Pages/FindRoommate";
 import BrowseListing from "../Pages/BrowseListing";
 import MyListings from "../Pages/MyListings";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +35,20 @@ const router = createBrowserRouter([
 
     ]
   },
+  {
+    path: '/auth',
+    element: <AuthLayout></AuthLayout>,
+        children:[
+            {
+              path:'/auth/login',
+              element: <Login></Login> 
+            },
+            {
+                path:'/auth/register',
+                element:<Register></Register>
+            },
+        ]
+  }
 ]);
 
 export default router;

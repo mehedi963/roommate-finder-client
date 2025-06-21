@@ -3,16 +3,21 @@ import { Link, NavLink } from 'react-router';
 import './Navbar.css';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaRegUserCircle } from "react-icons/fa";
-import userIcon from '../assets/profile.png'
+import userIcon from '../assets/user.png'
+import { toast, ToastContainer } from 'react-toastify';
 
 const Navbar = () => {
 
-  const {user} = use(AuthContext);
+  const {user,logOut} = use(AuthContext);
   console.log(user);
 
 
   const handleLogout = () =>{
-    
+    logOut().then(() =>{
+      toast("Log Out Successfully")
+    }).catch(error =>{
+      console.log(error);
+    })
   }
 
     const links = <>
@@ -47,16 +52,13 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-
-   <div>
+            <img className='w-10  mr-3' src={userIcon} alt="" />
+             <div>
       {user ?  <button onClick={handleLogout} className="btn btn-secondary">Log Out</button> :  <Link to='/auth/login' className="btn btn-secondary">Login</Link> }
       <ToastContainer/>
     </div>
 
-    <img className='w-10  mr-3' src={userIcon} alt="" />
-    {
 
-    }
    
    
   </div>

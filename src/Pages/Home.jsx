@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from '../Components/Slider';
 import FeaturePost from '../Components/FeaturePost';
 
-const userPromise = fetch('http://localhost:3000/user').then(res => res.json());
+//const userPromise = fetch('http://localhost:3000/user').then(res => res.json());
 
 
 
@@ -14,7 +14,7 @@ const Home = () => {
         </section>
 
         <section className='my-10 '>
-               <FeaturePost userPromise={userPromise}></FeaturePost> 
+               <FeaturePost></FeaturePost> 
         </section>
         </div>
         

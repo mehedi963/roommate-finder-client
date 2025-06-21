@@ -9,6 +9,7 @@ import BrowseListing from "../Pages/BrowseListing";
 import MyListings from "../Pages/MyListings";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/findRoommate',
-          element: <FindRoommate></FindRoommate>   
+          element: <PrivateRoute><FindRoommate></FindRoommate></PrivateRoute>   
         },
         {
             path:'/browse',
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/myListing',
-            element: <MyListings></MyListings>
+            element: <PrivateRoute><MyListings></MyListings></PrivateRoute>
         }
 
     ]

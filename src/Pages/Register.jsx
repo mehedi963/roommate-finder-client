@@ -7,7 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 const Register = () => {
 
-    const {createUser,setUser,signInGoogle} = use(AuthContext);
+    const {createUser,setUser,signInGoogle,} = use(AuthContext);
 
     const handleRegister = (e) =>{
         e.preventDefault();
@@ -22,7 +22,7 @@ const Register = () => {
             setUser(user);
         }).catch(error =>{
             console.log(error.message);
-        })
+        })     
     }
 
 

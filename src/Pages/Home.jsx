@@ -1,12 +1,15 @@
 import React from 'react';
 import Slider from '../Components/Slider';
 import FeaturePost from '../Components/FeaturePost';
+import { useLoaderData } from 'react-router';
 
-//const userPromise = fetch('http://localhost:3000/user').then(res => res.json());
+
 
 
 
 const Home = () => {
+    const roomsData = useLoaderData();
+    console.log(roomsData);
     return (
         <div>
             <section className=''>

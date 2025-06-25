@@ -28,6 +28,7 @@ const Login = () => {
     const handleGoogleLogin = () =>{
         signInGoogle(provider).then(result =>{
             setUser(result.user);
+            navigate(`${location.state ? location.state : '/'}`)
         }).catch(error => {
             console.log(error.message);
         })
@@ -48,7 +49,7 @@ const Login = () => {
                     error && <p className='text-red-500 text-sm'>{error}</p>
                 }
                     <div ><a className="link link-hover">Forgot password?</a>
-                    {/* <ToastContainer></ToastContainer> */}
+                    
                     </div>
 
                     <button type='submit' className="btn btn-neutral mt-4">Login

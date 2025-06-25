@@ -10,6 +10,7 @@ import MyListings from "../Pages/MyListings";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../Provider/PrivateRoute";
+import FeaturePost from "../Components/FeaturePost";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children:[
         {
             index:true,
+            loader:()=>fetch("http://localhost:3000/roommates"),
             Component: Home
         },
         {

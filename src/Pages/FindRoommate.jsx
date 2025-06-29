@@ -3,6 +3,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 
 
+
 const FindRoommate = () => {
 const {user} = use(AuthContext);
 console.log(user);
@@ -15,13 +16,19 @@ console.log(user);
         const roomsData = Object.fromEntries(formData.entries());
         console.log(roomsData);
 
+        const userId = user?.uid;
+        const roommatesData = {
+            ...roomsData,
+            userId: userId
+        };
+
         //sent data to Database
         fetch("http://localhost:3000/roommates",{
             method:'POST',
             headers:{
                 'content-type' : "application/json"
             },
-            body: JSON.stringify(roomsData)
+            body: JSON.stringify(roommatesData)
         }).then(res => res.json()).then(data =>{
             if(data.insertedId){
                Swal.fire({
@@ -30,9 +37,11 @@ console.log(user);
                     draggable: true
                     });
 
-                    form.rest();
             }
         })
+
+
+       
     }
 
     return (
@@ -84,7 +93,7 @@ console.log(user);
                      </fieldset>
                      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4 rounded-lg my-6">
                     <label className="label">User Name </label>
-                    <input name="name" placeholder={user.displayName} className="w-full p-2 border rounded-lg" />
+                    <input name="name" placeholder={user.displayName} className="w-full p-2 border rounded-lg" readOnly />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4 rounded-lg my-6">
                     <label className="label">User Email</label>

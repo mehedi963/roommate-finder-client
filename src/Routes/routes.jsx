@@ -4,7 +4,6 @@ import {
 import Home from "../Pages/Home";
 import HomeLayout from "../Layouts/HomeLayout";
 import AuthLayout from "../Layouts/AuthLayout";
-import FindRoommate from "../Pages/FindRoommate";
 import BrowseListing from "../Pages/BrowseListing";
 import MyListings from "../Pages/MyListings";
 import Login from "../Pages/Login";
@@ -12,6 +11,7 @@ import Register from "../Pages/Register";
 import PrivateRoute from "../Provider/PrivateRoute";
 import FeaturePost from "../Components/FeaturePost";
 import Details from "../Pages/Details";
+import RoommatePost from "../Pages/RoommatePost";
 
 
 const router = createBrowserRouter([
@@ -24,9 +24,10 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:3000/roommates"),
         Component: Home
       },
+
       {
-        path: '/findRoommate',
-        element: <PrivateRoute><FindRoommate></FindRoommate></PrivateRoute>
+        path:'/roommatePost',
+        element:<PrivateRoute><RoommatePost></RoommatePost></PrivateRoute>
       },
       {
         path: '/browse',

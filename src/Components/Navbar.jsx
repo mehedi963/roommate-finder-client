@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, } from 'react';
 import { Link, NavLink } from 'react-router';
 import './Navbar.css';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -24,6 +24,7 @@ const Navbar = () => {
     <li><NavLink to='/browse'>Browse Listing</NavLink></li>
     <li><NavLink to='/myListing'>My Listings</NavLink></li>
     </>
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -50,6 +51,8 @@ const Navbar = () => {
       {user ?  <button onClick={handleLogout} className="btn btn-secondary">Log Out</button> :  <Link to='/auth/login' className="btn btn-secondary">Login</Link> }
       <ToastContainer/>
     </div>
+
+    
 
 
    

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { } from 'react';
 import Slider from '../Components/Slider';
 import FeaturePost from '../Components/FeaturePost';
 import { useLoaderData } from 'react-router';
@@ -13,6 +13,8 @@ import Hero from './Hero';
 const Home = () => {
     const roomsData = useLoaderData();
     console.log(roomsData);
+
+
     return (
         <div>
             <section>
@@ -35,7 +37,7 @@ const Home = () => {
         <section >
             <Banners></Banners>
         </section>
-        <section className='bg-base-200 shadow-2xl'>
+        <section className=''>
             <FAQ></FAQ>
         </section>
         </div>

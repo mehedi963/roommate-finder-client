@@ -4,4 +4,8 @@
   padding: 2rem;
   
 }
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake;
+}
 

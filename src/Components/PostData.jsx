@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const PostData = ({post,index,handleDelete}) => {
     const {title,roomType,location,contact,_id} = post;
-    console.log(post);
+    //console.log(post);
     return (
         <>
            <tr>
@@ -22,7 +22,7 @@ const PostData = ({post,index,handleDelete}) => {
                        </Link>
                     </button>
                     <button>
-                        <Link>
+                        <Link to={`/update/${_id}`}>
                         <GrUpdate size={20}></GrUpdate>
                         </Link>
                     </button>

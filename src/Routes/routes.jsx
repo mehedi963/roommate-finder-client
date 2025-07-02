@@ -12,6 +12,7 @@ import PrivateRoute from "../Provider/PrivateRoute";
 import FeaturePost from "../Components/FeaturePost";
 import Details from "../Pages/Details";
 import RoommatePost from "../Pages/RoommatePost";
+import Update from "../Pages/Update";
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         path: '/roommates/:id',
         loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
         element: <PrivateRoute><Details></Details></PrivateRoute>
+      },
+      {
+        path:'/update/:id',
+        loader:({params}) =>fetch(`http://localhost:3000/update/${params.id}`),
+        element:<PrivateRoute><Update></Update></PrivateRoute>
       }
 
     ]

@@ -5,7 +5,7 @@ import PostDetails from '../Components/PostDetails';
 const Details = () => {
     const detailsData = useLoaderData();
     
-    //
+   
     return (
         <div className='min-h-screen mt-8'>
             <div>

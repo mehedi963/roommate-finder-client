@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import './Navbar.css';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaRegUserCircle } from "react-icons/fa";
-import userIcon from '../assets/user.png'
+import userIcon from '../assets/profile.png'
 import { toast, ToastContainer } from 'react-toastify';
 
 const Navbar = () => {

@@ -3,6 +3,8 @@ import Slider from '../Components/Slider';
 import FeaturePost from '../Components/FeaturePost';
 import { useLoaderData } from 'react-router';
 import FAQ from '../Components/FAQ';
+import Banners from './Banners';
+import Hero from './Hero';
 
 
 
@@ -13,6 +15,10 @@ const Home = () => {
     console.log(roomsData);
     return (
         <div>
+            <section>
+                <Hero></Hero>
+            </section>
+
             <section className='min-h-3/5'>
             <Slider></Slider>
         </section>
@@ -24,6 +30,10 @@ const Home = () => {
                     roomsData.map(roomData => <FeaturePost key={roomData._id} roomData={roomData}></FeaturePost>)
                 }
                 </div> 
+        </section>
+
+        <section >
+            <Banners></Banners>
         </section>
         <section className='bg-base-200 shadow-2xl'>
             <FAQ></FAQ>

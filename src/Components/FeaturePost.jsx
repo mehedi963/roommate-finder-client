@@ -8,8 +8,7 @@ const FeaturePost = ({roomData}) => {
    console.log(roomData);
    
     return (
-     <div>
-        
+     <div className='w-full'>    
         <div className="card w-96 bg-base-100 card-lg shadow-sm">
   <div className="card-body">
     <h2 className="card-title font-bold">{title}</h2>

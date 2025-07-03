@@ -25,18 +25,18 @@ const HomeLayout = () => {
     return (
         <div>
             <div className={darkMode ? 'bg-gray-900 text-black min-h-screen' : 'bg-white text-gray-900 min-h-screen'}>
-       <div className="flex justify-end p-4">
+       
+      <div className="">
+        <header>
+                <Navbar></Navbar> 
+                <div className="flex justify-center p-4">
         <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600"
         >
           {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
-      </div>
-      <div className="">
-        <header>
-                <Navbar></Navbar>
-               
+      </div> 
             </header>
             <main>
                 <Outlet></Outlet>

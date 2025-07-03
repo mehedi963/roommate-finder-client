@@ -5,7 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 const FeaturePost = ({roomData}) => {
     const {title,description,preferences,availability,_id} = roomData;
     //const {user} = use(AuthContext);
-   console.log(roomData);
+   //console.log(roomData);
    
     return (
      <div className='w-full'>    

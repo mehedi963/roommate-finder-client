@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 
 const PostDetails = ({data}) => {
     
-    console.log(data);
+    //console.log(data);
     const auth = getAuth();
     const currentUser = auth.currentUser;
-    console.log(currentUser);
+    //console.log(currentUser);
     const { title, roomType, rent, preferences, name, location, description, contact, availability,_id, uid, } = data;
 
     const [like, setLike] = useState(0);

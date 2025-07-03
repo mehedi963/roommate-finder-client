@@ -22,7 +22,7 @@ const Update = () => {
         const form = e.target;
         const formData = new FormData(form);
         const newData = Object.fromEntries(formData.entries());
-        console.log(newData);
+        //console.log(newData);
 
         //update data
         fetch(`http://localhost:3000/update/${data?._id}`, {

@@ -32,11 +32,11 @@ const MyListings = () => {
                         "Content-type" : "application/json"
                     }
                 }).then(res => res.json()).then(data => {
-                    console.log(data);
+                    //console.log(data);
                     if (data.deletedCount) {
                         const remainingData = posts.filter(post => post._id !== id);
                         setPosts(remainingData);
-                        console.log(remainingData);
+                        //console.log(remainingData);
                     }
                 })
                 Swal.fire({

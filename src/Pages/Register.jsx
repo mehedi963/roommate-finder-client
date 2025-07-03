@@ -27,7 +27,7 @@ const Register = () => {
             Swal.fire({
                             position: "top-end",
                             icon: "success",
-                            title: "Log In Successfully",
+                            title: "Register Successfully",
                             showConfirmButton: false,
                             timer: 1500
                         });
@@ -40,6 +40,13 @@ const Register = () => {
     const handleGoogle = () =>{
         signInGoogle (provider).then(result =>{
            setUser(result.user); 
+           Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Register Successfully",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
         }).catch(error =>{
             console.log(error.message);
         })

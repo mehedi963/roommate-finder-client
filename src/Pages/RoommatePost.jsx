@@ -6,13 +6,13 @@ import { getAuth } from 'firebase/auth';
 const RoommatePost = () => {
 
     const {user} = use(AuthContext);
-    console.log(user);
+    //console.log(user);
     const handlePost =(e)=>{
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const newData = Object.fromEntries(formData.entries());
-        console.log(newData);
+        //console.log(newData);
 
         //send data
         const user = getAuth().currentUser;

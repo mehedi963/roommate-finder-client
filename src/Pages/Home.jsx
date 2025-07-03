@@ -12,7 +12,7 @@ import Hero from './Hero';
 
 const Home = () => {
     const roomsData = useLoaderData();
-    console.log(roomsData);
+    //.log(roomsData);
 
 
     return (

@@ -2,6 +2,8 @@ import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
+import Swal from 'sweetalert2';
+
 
 
 
@@ -22,6 +24,13 @@ const Register = () => {
         createUser(email,password).then(result =>{
             const user = result.user;
             setUser(user);
+            Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Log In Successfully",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
         }).catch(error =>{
             console.log(error.message);
         })     

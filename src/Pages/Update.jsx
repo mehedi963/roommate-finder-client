@@ -25,7 +25,7 @@ const Update = () => {
         //console.log(newData);
 
         //update data
-        fetch(`http://localhost:3000/update/${data?._id}`, {
+        fetch(`https://mehedi-server.vercel.app/update/${data?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': "application/json"

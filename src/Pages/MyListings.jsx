@@ -11,7 +11,7 @@ const MyListings = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:3000/myListing?uid=${user.uid}`).then(res => res.json()).then(data => setPosts(data))
+            fetch(`https://mehedi-server.vercel.app/myListing?uid=${user.uid}`).then(res => res.json()).then(data => setPosts(data))
         }
     }, [])
 
@@ -26,7 +26,7 @@ const MyListings = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/deletePost/${id}`, {
+                fetch(`https://mehedi-server.vercel.app/deletePost/${id}`, {
                     method: 'DELETE',
                     headers:{
                         "Content-type" : "application/json"

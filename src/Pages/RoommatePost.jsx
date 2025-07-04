@@ -22,7 +22,7 @@ const RoommatePost = () => {
                 };
         
                 //sent data to Database
-                fetch("http://localhost:3000/roommates", {
+                fetch("https://mehedi-server.vercel.app/roommates", {
                     method: 'POST',
                     headers: {
                         'content-type': "application/json"

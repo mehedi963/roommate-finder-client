@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/roommates"),
+        loader: () => fetch("https://mehedi-server.vercel.app/roommates"),
         Component: Home
       },
 
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/browse',
-        loader:()=>fetch("http://localhost:3000/browse"),
+        loader:()=>fetch("https://mehedi-server.vercel.app/browse"),
         element: <BrowseListing></BrowseListing>
       },
       {
@@ -41,12 +41,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/roommates/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+        loader: ({ params }) => fetch(`https://mehedi-server.vercel.app/roommates/${params.id}`),
         element: <PrivateRoute><Details></Details></PrivateRoute>
       },
       {
         path:'/update/:id',
-        loader:({params}) =>fetch(`http://localhost:3000/update/${params.id}`),
+        loader:({params}) =>fetch(`https://mehedi-server.vercel.app/update/${params.id}`),
         element:<PrivateRoute><Update></Update></PrivateRoute>
       }
 

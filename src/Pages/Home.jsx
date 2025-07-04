@@ -6,10 +6,6 @@ import FAQ from '../Components/FAQ';
 import Banners from './Banners';
 import Hero from './Hero';
 
-
-
-
-
 const Home = () => {
     const roomsData = useLoaderData();
     //.log(roomsData);
